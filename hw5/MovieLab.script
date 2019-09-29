@@ -1,0 +1,37 @@
+Script started on Sun 09 Dec 2018 05:25:18 PM PST
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ make
+gcc -ansi -std=c99 -Wall -c MovieLab.c -o MovieLab.o
+gcc -ansi -std=c99 -Wall -c FileIO.c -o FileIO.o
+gcc -ansi -std=c99 -Wall -c Image.c -o Image.o
+gcc -ansi -std=c99 -Wall -c MovieIO.c -o MovieIO.o
+gcc -ansi -std=c99 -Wall -c DIPs.c -o DIPs.o
+gcc -ansi -std=c99 -Wall -c ImageList.c -o ImageList.o
+gcc -ansi -std=c99 -Wall -c Movie.c -o Movie.o
+gcc -ansi -std=c99 -Wall -c IterativeFilter.c -o IterativeFilter.o
+ar rc libFilter.a DIPs.o ImageList.o Movie.o IterativeFilter.o
+ranlib libFilter.a
+gcc -ansi -std=c99 -Wall -lm MovieLab.o FileIO.o Image.o MovieIO.o -L. -lFilter -o MovieLab
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ ./MovieLab -i HSSOE.ppm -o hue.yuv -start= 0 -end= 5 -step= 0.5 -hue
+The movie file hue.yuv has been written successfully!
+11 frames are written to the file hue.yuv in total.
+movie size: 300x200
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ ./MovieLab -i HSSOE.ppm -o saturation.yuv -start= 0 -end= 5 -step= 0.5 -saturate
+The movie file saturation.yuv has been written successfully!
+11 frames are written to the file saturation.yuv in total.
+movie size: 300x200
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ ./MovieLab -m hue.yuv -o reverse.yuv -f 11 -s 300x200 -reverse
+The movie file hue.yuv has been read successfully!
+The movie file reverse.yuv has been written successfully!
+11 frames are written to the file reverse.yuv in total.
+movie size: 300x200
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ ./MovieLab -,[Km saturation.yuv -o reverse.yuv -f 11 -s 300x200 -reverse
+The movie file saturation.yuv has been read successfully!
+The movie file reverse.yuv has been written successfully!
+11 frames are written to the file reverse.yuv in total.
+movie size: 300x200
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ make clean
+rm -f *.o *.a MovieLab `find . -name '*.yuv'`
+]0;doqm@zuma:~/hw5[doqm@zuma ~/hw5]$ exit
+exit
+
+Script done on Sun 09 Dec 2018 05:29:13 PM PST

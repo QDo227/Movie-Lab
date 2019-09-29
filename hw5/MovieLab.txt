@@ -1,0 +1,6 @@
+**(STATURATION BONUS INCLUDED)**
+
+_The ojective of this program is to learn how to change and edit a movie file through the manipulation of frames. In this particular project, we learn how to
+load and save a movie after filtering each frames uisng various filter functions that was provided in the previous lab. For the implementation part, we 
+create a 300x200 movie with frames importing from the image file through the use Link-list. One of the advantage of using link-list is we can create and get 
+access to multiple files in the link-list and manipulate the direction in which the list is traversing.
